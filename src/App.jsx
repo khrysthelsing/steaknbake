@@ -132,7 +132,6 @@ function App() {
       }),
     }).then(() => {
       setMessage(editId ? "Order updated!" : "Order added!");
-      setTimeout(() => setMessage(""), 3000);
       setName("");
       setMeal("");
       setAmount("");
@@ -251,8 +250,16 @@ function App() {
         </div>
       </nav>
 
-      {message && <div className="message">{message}</div>}
-
+      {message && (
+        <div className="alert-overlay">
+          <div className="alert-box">
+            <p>{message}</p>
+            <button className="add-button" onClick={() => setMessage("")}>
+              OK
+            </button>
+          </div>
+        </div>
+      )}
       {page === "order" && (
         <div className="container1">
           <h1>{editId ? "Edit Order" : "Order Form"}</h1>
