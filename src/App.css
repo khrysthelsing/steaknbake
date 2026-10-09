@@ -138,6 +138,18 @@ th {
   margin: 0;
 }
 
+.message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--red);
+  border-radius: 5px;
+}
+
 @media (max-width: 800px) {
   .topbar {
     flex-direction: column;

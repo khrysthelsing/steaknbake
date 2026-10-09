@@ -41,6 +41,8 @@ function App() {
 
   const [salesMonth, setSalesMonth] = useState("");
 
+  const [message, setMessage] = useState("");
+
   const filteredOrders = orders
     .filter(
       (order) =>
@@ -118,7 +120,6 @@ function App() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    alert("Done");
 
     fetch(editId ? `${API}/orders/${editId}` : `${API}/orders`, {
       method: editId ? "PUT" : "POST",
@@ -130,6 +131,8 @@ function App() {
         date,
       }),
     }).then(() => {
+      setMessage(editId ? "Order updated!" : "Order added!");
+      setTimeout(() => setMessage(""), 3000);
       setName("");
       setMeal("");
       setAmount("");
@@ -247,6 +250,8 @@ function App() {
           </button>
         </div>
       </nav>
+
+      {message && <div className="message">{message}</div>}
 
       {page === "order" && (
         <div className="container1">
