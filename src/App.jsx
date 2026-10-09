@@ -131,7 +131,9 @@ function App() {
         date,
       }),
     }).then(() => {
-      setMessage(editId ? "Order updated!" : "Order added!");
+      setMessage(
+        `${editId ? "Order updated" : "Order added"}: ${amount} x ${meal} for ${name}`,
+      );
       setName("");
       setMeal("");
       setAmount("");
