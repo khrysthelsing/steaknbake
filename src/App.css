@@ -138,6 +138,54 @@ th {
   margin: 0;
 }
 
+@media (max-width: 800px) {
+  .topbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .nav-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  button {
+    padding: 8px 12px;
+  }
+
+  .container1,
+  .container2,
+  .container3 {
+    width: 92%;
+    margin: 24px auto;
+    padding: 16px;
+    overflow-x: auto;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .stock-input {
+    width: 80px;
+  }
+
+  th,
+  td {
+    padding: 8px 4px;
+  }
+
+  .report-footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .print-button {
+    margin: 0;
+  }
+}
+
 @media print {
   .topbar,
   .filters,
